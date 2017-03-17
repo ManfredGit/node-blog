@@ -9,6 +9,6 @@ This is just a simple API written in Express for a blog. This API will serve a R
 
 ``` yarn add ```
 
-``` nodemon ```
+``` npm run start ```
 
 That's it!

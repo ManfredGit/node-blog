@@ -19,6 +19,7 @@ platforms
 plugins
 www
 npm-debug.log
+build/
 
 
 # OS generated files #
