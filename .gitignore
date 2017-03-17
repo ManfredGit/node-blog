@@ -1,30 +1,25 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+.idea
+node_modules
+*.bak
+*.js#
+*.__#
+*.__~
+*.ht#
+.gi#
+*.js~
+*.ht~
+*.js.map
+*.js
+*.d.ts
+.vscode
+src/app/users/items.js~
+dist/build
+build
+platforms
+plugins
+www
+npm-debug.log
 
-# Packages #
-############
-node_modules/
-/node_modules/
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
 
 # OS generated files #
 ######################
@@ -35,15 +30,3 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Images#
-######################
-
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-*.svg
-*.ico
-*.psd

@@ -1,11 +1,13 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const cors = require('cors');
-const router = require('./router');
-const config = require('./config');
+import * as express from 'express';
+import * as mongoose from 'mongoose';
+import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
+import * as Promise from "bluebird";
+import * as helmet from 'helmet';
+import * as logger from 'morgan';
+import * as cors from 'cors';
+import router from './routes/v1';
+import config from './config/main';
 const app = express();
 
 // init mongoose
@@ -17,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(logger('dev'));
+app.use(helmet());
 app.use(cors());
 
 

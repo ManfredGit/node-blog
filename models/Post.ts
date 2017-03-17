@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
@@ -12,18 +12,16 @@ const PostSchema = new Schema({
     trim: true,
     required: true
   },
-  slug: {
-    type: String,
-    default: '',
-    trim: true,
-    required: true
-  },
   content: {
     type: String,
     default: '',
     required: true
+  },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 
 
-module.exports = mongoose.model('Post', PostSchema);
+export default mongoose.model('Post', PostSchema);
