@@ -7,7 +7,9 @@ This is just a simple API written in Express and TypeScript for a blog.
 
 ``` cd node-blog-api ```
 
-``` yarn add ```
+``` yarn install ```
+
+``` tsc ```
 
 ``` npm run start ```
 
