@@ -7,7 +7,7 @@
   "author": "Clayton Ray <iamclaytonray@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./build/server.js"
+    "start": "tsc && nodemon ./build/server.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
