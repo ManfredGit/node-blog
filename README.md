@@ -3,21 +3,21 @@
 This is just a simple API written in Express and TypeScript for a blog.
 
 ### Get Started:
-``` git clone https://github.com/iamclaytonray/node-blog-api.git ```
+`git clone https://github.com/iamclaytonray/node-blog-api.git`
 
-``` cd node-blog-api ```
+`cd node-blog-api `
 
-``` yarn install ```
-OR
-``` npm install ```
+`yarn install`
 
-``` tsc ```
+**OR**
 
-``` npm run start ```
+`npm install`
 
-<i>Please note, in order to run tsc, you need TypeScript to be globally installed.</i>
+`npm run start`
 
-```npm install -g typescript```
+<i>Please note, the start script includes the typescript compiler. Also, in order to run tsc, you need TypeScript to be globally installed.</i>
+
+`npm install -g typescript`
 
 <b>That's it!</b>
 
