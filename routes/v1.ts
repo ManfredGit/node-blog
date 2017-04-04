@@ -1,8 +1,13 @@
 import * as express from 'express';
+// import * as passport from 'passport';
 import { getUserById, createUser, updateUser, deleteUser } from '../controllers/UserController';
 import { getAllPosts, getPostById, createPost, updatePost, deletePost } from '../controllers/PostController';
 
+// import * as passportService from '../config/passport';
 
+// // Middleware to require login/auth
+// const requireAuth = passport.authenticate('jwt', { session: false });
+// const requireLogin = passport.authenticate('local', { session: false });
 
 export default (app) => {
 

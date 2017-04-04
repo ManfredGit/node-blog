@@ -24,15 +24,15 @@ const UserSchema = new Schema({
     default: '',
     trim: true,
     required: true
+  },
+  password: {
+    type: String,
+    default: '',
+    required: true
   }
-  // password: {
-  //   type: String,
-  //   default: '',
-  //   required: true
-  // }
 });
 
-// hash user's password before saving to db
+// // hash user's password before saving to db
 // UserSchema.pre('save', function (next) {
 //   const user = this;
 

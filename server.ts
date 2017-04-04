@@ -2,13 +2,20 @@ import * as express from 'express';
 import * as mongoose from 'mongoose';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
-import * as Promise from "bluebird";
+// import * as Promise from 'bluebird';
 import * as helmet from 'helmet';
 import * as logger from 'morgan';
 import * as cors from 'cors';
 import router from './routes/v1';
 import config from './config/main';
 const app = express();
+
+
+// make bluebird default Promise
+const Promise = require('bluebird');
+
+// plugin bluebird promise in mongoose
+require('mongoose').Promise = Promise;
 
 // init mongoose
 mongoose.connect(config.db);

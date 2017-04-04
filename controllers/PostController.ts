@@ -1,14 +1,28 @@
 import Post from '../models/Post';
 // import User from '../models/User';
 
+// import * as Promise from 'bluebird';
+// const fs = Promise.promisifyAll(require('fs'));
+
+
+// get all posts
+// export function getAllPosts(req, res, next) {
+//   Post.find((err, posts) => {
+//     if (err) {
+//       res.status(500).json({ err });
+//     }
+//     res.status(200).json({ posts });
+//   })
+// }
 
 // get all posts
 export function getAllPosts(req, res, next) {
-  Post.find((err, posts) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  Post.find()
+  .then((posts) => {
     res.status(200).json({ posts });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
   })
 }
 
@@ -16,12 +30,13 @@ export function getAllPosts(req, res, next) {
 export function getPostById(req, res, next) {
   const id = req.params.id;
 
-  Post.findById(id, (err, post) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
-    res.status(200).json({ post });
-  });
+  Post.findById(id)
+  .then((posts) => {
+    res.status(200).json({ posts });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }
 
 // create post
@@ -38,12 +53,13 @@ export function createPost(req, res, next) {
     content
   });
 
-  post.save((err, post) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  post.save()
+  .then((post) => {
     res.status(201).json({ post });
-  });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }
 
 
@@ -51,12 +67,13 @@ export function createPost(req, res, next) {
 export function updatePost(req, res, next) {
   const id = req.params.id;
 
-  Post.findByIdAndUpdate(id, req.body, (err, post) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  Post.findByIdAndUpdate(id, req.body)
+  .then((post) => {
     res.status(200).json({ post });
-  });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }
 
 
@@ -64,10 +81,11 @@ export function updatePost(req, res, next) {
 export function deletePost(req, res, next) {
   const id = req.params.id;
 
-  Post.findByIdAndRemove(id, (err, post) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  Post.findByIdAndRemove(id)
+  .then((post) => {
     res.status(204).json({ post });
-  });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }
