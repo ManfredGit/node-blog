@@ -1,16 +1,16 @@
 import User from '../models/User';
 
-
 // get user by id
 export function getUserById(req, res, next) {
   const id = req.params.id;
 
-  User.findById((err, user) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  User.findById(id)
+  .then((user) => {
     res.status(200).json({ user });
-  });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }
 
 
@@ -25,12 +25,13 @@ export function createUser(req, res, next) {
     email
   });
 
-  user.save((err, user) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  user.save()
+  .then((user) => {
     res.status(201).json({ user });
-  });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }
 
 
@@ -38,12 +39,13 @@ export function createUser(req, res, next) {
 export function updateUser(req, res, next) {
   const id = req.params.id;
 
-  User.findByIdAndUpdate(id, req.body, (err, user) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  User.findByIdAndUpdate(id, req.body)
+  .then((user) => {
     res.status(200).json({ user });
-  });
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }
 
 
@@ -51,11 +53,11 @@ export function updateUser(req, res, next) {
 export function deleteUser(req, res, next) {
   const id = req.params.id;
 
-  User.findByIdAndRemove(id).exec((err, user) => {
-    if (err) {
-      res.status(500).json({ err });
-    }
+  User.findByIdAndRemove(id)
+  .then((user) => {
     res.status(204).json({ user });
-  });
-
+  })
+  .catch((err) => {
+    res.status(500).json({ err });
+  })
 }

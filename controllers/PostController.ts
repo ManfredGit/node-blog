@@ -1,19 +1,4 @@
 import Post from '../models/Post';
-// import User from '../models/User';
-
-// import * as Promise from 'bluebird';
-// const fs = Promise.promisifyAll(require('fs'));
-
-
-// get all posts
-// export function getAllPosts(req, res, next) {
-//   Post.find((err, posts) => {
-//     if (err) {
-//       res.status(500).json({ err });
-//     }
-//     res.status(200).json({ posts });
-//   })
-// }
 
 // get all posts
 export function getAllPosts(req, res, next) {
